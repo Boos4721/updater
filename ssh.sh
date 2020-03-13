@@ -11,7 +11,7 @@ echo "Enable SSH ...."
 sed -i 's/^#\?PermitRootLogin.*/PermitRootLogin yes/g' /etc/ssh/sshd_config;
 sed -i 's/^#\?PasswordAuthentication.*/PasswordAuthentication yes/g' /etc/ssh/sshd_config; 
 echo "Patch Boos User...."
-adduser boos
+adduser boos && passwd boos
 echo "Patch Boos To Root User…."
 chmod 777 /etc/sudoers
 echo "# boos ALL=(ALL) NOPASSWD: ALL" >>  /etc/sudoers
