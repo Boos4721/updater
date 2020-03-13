@@ -14,6 +14,6 @@ echo "Patch Boos User...."
 adduser boos && passwd boos
 echo "Patch Boos To Root User…."
 chmod 777 /etc/sudoers
-echo "# boos ALL=(ALL) NOPASSWD: ALL" >>  /etc/sudoers
+echo "boos ALL=(ALL) NOPASSWD: ALL" >>  /etc/sudoers
 chmod 440 /etc/sudoers
 echo "Done ...."
