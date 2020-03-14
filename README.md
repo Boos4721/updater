@@ -23,3 +23,10 @@ wget -N --no-check-certificate https://raw.githubusercontent.com/Boos4721/update
 ``` bash
 wget -N --no-check-certificate https://raw.githubusercontent.com/Boos4721/updater/master/speedtest-centos.sh && chmod +x speedtest-centos.sh&& bash speedtest-centos.sh
 ```
+
+# Build Rom
+
+#### Rom:
+``` bash
+wget -N --no-check-certificate https://raw.githubusercontent.com/Boos4721/updater/master/rom.sh && chmod +x rom.sh && bash rom.sh
+```
