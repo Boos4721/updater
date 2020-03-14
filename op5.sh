@@ -73,7 +73,7 @@ compile
 # Move file to Anykernel folders
 ############################################################
     rm -rf $NAME
-    git clone https://github.com/Boos4721/AnyKernel3.git  ~/$NAME
+    git clone https://github.com/Boos4721/AnyKernel3.git  -b op5/5t ~/$NAME
     cp ~/$KERNEL_DIR/$OUTDIR/arch/arm64/boot/Image.gz-dtb ~/$NAME/Image.gz-dtb
 	echo "  File moved to $ZIP directory"
 
