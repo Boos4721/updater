@@ -35,6 +35,8 @@ nocol='\033[0m'
 ############################################################
 # Download Files
 ############################################################
+sudo apt update
+sudo apt-get install -y openssl ccache bc bash git-core gnupg build-essential zip curl make automake autogen autoconf autotools-dev libtool shtool python  m4 gcc libtool zlib1g-dev flex gcc-aarch64-linux-gnu libssl-dev
 git clone https://github.com/Boos4721/op5_kernel.git $KERNEL_DIR
 git clone https://github.com/Boos4721/clang.git --depth=1 $CLANG
 
