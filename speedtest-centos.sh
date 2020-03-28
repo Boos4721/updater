@@ -5,4 +5,4 @@ export PATH
  wget https://bootstrap.pypa.io/get-pip.py --no-check-certificate
  python get-pip.py
  pip install speedtest-cli
- speedetest
+ speedtest
