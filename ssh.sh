@@ -11,7 +11,7 @@ sudo sed -i 's/^#\?PasswordAuthentication.*/PasswordAuthentication yes/g' /etc/s
 echo "Patch Boos User...."
 sudo adduser boos && sudo passwd boos
 echo "Patch Boos To Root User…."
-sudo chmod 777 /etc/sudoers
+chmod 777 /etc/sudoers
 echo "boos ALL=(ALL) NOPASSWD: ALL" >>  /etc/sudoers
-sudo chmod 0440 /etc/sudoers
+chmod 0440 /etc/sudoers
 echo "Done ...."
