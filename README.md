@@ -30,3 +30,8 @@ wget -N --no-check-certificate https://raw.githubusercontent.com/Boos4721/update
 ``` bash
 wget -N --no-check-certificate https://raw.githubusercontent.com/Boos4721/updater/master/rom.sh && chmod +x rom.sh && bash rom.sh
 ```
+
+# For China User
+```
+wget -N --no-check-certificate https://raw.gitee.com/Boos4721/updater/master/rom.sh && chmod +x ssr.sh && bash ssr.sh
+```
