@@ -1,7 +1,7 @@
 #!bin/bash
 
 yum update
-yum install java-1.8.0-openjdk
+yum install -y java-1.8.0-openjdk
 systemctl start firewalld
 firewall-cmd --zone=public --add-port=80/tcp --permanent
 firewall-cmd --reload
