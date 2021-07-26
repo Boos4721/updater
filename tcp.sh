@@ -42,13 +42,13 @@ installbbr(){
 			
 		elif [[ ${version} = "7" ]]; then
 			if [[ ${bit} = "x86_64" ]]; then
-				wget -N --no-check-certificate https://github.com/ylx2016/kernel/releases/download/5.5.0/kernel-5.5.0-1-c7.x86_64.rpm
-				wget -N --no-check-certificate https://github.com/ylx2016/kernel/releases/download/5.5.0/kernel-headers-5.5.0-1-c7.x86_64.rpm
+				wget -N --no-check-certificate https://github.com/ylx2016/kernel/releases/download/Centos_Kernel_5.13.5_latest_bbr_2021.07.26-0611/kernel-5.13.5-1.x86_64.rpm
+				wget -N --no-check-certificate https://github.com/ylx2016/kernel/releases/download/Centos_Kernel_5.13.5_latest_bbr_2021.07.26-0611/kernel-devel-5.13.5-1.x86_64.rpm
 
-				yum install -y kernel-5.5.0-1-c7.x86_64.rpm
-				yum install -y kernel-headers-5.5.0-1-c7.x86_64.rpm
+				yum install -y kernel-5.13.5-1.x86_64.rpm
+				yum install -y kernel-devel-5.13.5-1.x86_64.rpm
 			
-				kernel_version="5.5.0"
+				kernel_version="5.13.5"
 			else
 				echo -e "${Error} 还在用32位内核，别再见了 !" && exit 1
 			fi	
