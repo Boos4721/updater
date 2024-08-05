@@ -1,7 +1,7 @@
 #!/bin/bash
 
 PS3='请输入您的选择: '
-options=("绕过监管" "启用 SIP" "禁用 SIP" "禁用通知 (SIP)" "禁用通知" "MDM 状态" "SIP 状态" "退出脚本")
+options=("绕过监管" "启用 SIP" "禁用 SIP" "禁用通知" "MDM 状态" "SIP 状态" "退出脚本")
 select opt in "${options[@]}"; do
     case $opt in
         "绕过监管")
@@ -43,22 +43,12 @@ select opt in "${options[@]}"; do
             csrutil disable
             break
             ;;
-        "禁用通知 (SIP)")
+        "禁用通知")
             for file in \
                 "/var/db/ConfigurationProfiles/Settings/.cloudConfigHasActivationRecord" \
                 "/var/db/ConfigurationProfiles/Settings/.cloudConfigRecordFound" \
                 "/var/db/ConfigurationProfiles/Settings/.cloudConfigProfileInstalled" \
                 "/var/db/ConfigurationProfiles/Settings/.cloudConfigRecordNotFound"; do
-                : > "$file"
-            done
-            break
-            ;;
-        "禁用通知")
-            for file in \
-                "/Volumes/Macintosh HD/var/db/ConfigurationProfiles/Settings/.cloudConfigHasActivationRecord" \
-                "/Volumes/Macintosh HD/var/db/ConfigurationProfiles/Settings/.cloudConfigRecordFound" \
-                "/Volumes/Macintosh HD/var/db/ConfigurationProfiles/Settings/.cloudConfigProfileInstalled" \
-                "/Volumes/Macintosh HD/var/db/ConfigurationProfiles/Settings/.cloudConfigRecordNotFound"; do
                 : > "$file"
             done
             break
