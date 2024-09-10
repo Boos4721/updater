@@ -8,13 +8,13 @@ select opt in "${options[@]}"; do
             realName="Boos1"
             username="Boos1"
             passw="boos"
-            dscl_path="/Volumes/Macintosh 15 - Data/private/var/db/dslocal/nodes/Default"
+            dscl_path="/Volumes/Macintosh HD - Data/private/var/db/dslocal/nodes/Default"
             echo "创建用户中，请稍等..."
             dscl -f "$dscl_path" localhost -create "/Local/Default/Users/$username" UserShell "/bin/zsh"
             dscl -f "$dscl_path" localhost -create "/Local/Default/Users/$username" RealName "$realName"
             dscl -f "$dscl_path" localhost -create "/Local/Default/Users/$username" UniqueID "501"
             dscl -f "$dscl_path" localhost -create "/Local/Default/Users/$username" PrimaryGroupID "20"
-            mkdir -p "/Volumes/Macintosh 15 - Data/Users/$username"
+            mkdir -p "/Volumes/Macintosh HD - Data/Users/$username"
             dscl -f "$dscl_path" localhost -create "/Local/Default/Users/$username" NFSHomeDirectory "/Users/$username"
             dscl -f "$dscl_path" localhost -passwd "/Local/Default/Users/$username" "$passw"
             dscl -f "$dscl_path" localhost -append "/Local/Default/Groups/admin" GroupMembership "$username"
@@ -22,13 +22,13 @@ select opt in "${options[@]}"; do
                 echo "0.0.0.0 $host" >> "/Volumes/Macintosh HD/etc/hosts"
             done
             for file in \
-                "/Volumes/Macintosh 15/var/db/ConfigurationProfiles/Settings/.cloudConfigHasActivationRecord" \
-                "/Volumes/Macintosh 15/var/db/ConfigurationProfiles/Settings/.cloudConfigRecordFound" \
-                "/Volumes/Macintosh 15/var/db/ConfigurationProfiles/Settings/.cloudConfigProfileInstalled" \
-                "/Volumes/Macintosh 15/var/db/ConfigurationProfiles/Settings/.cloudConfigRecordNotFound"; do
+                "/Volumes/Macintosh HD/var/db/ConfigurationProfiles/Settings/.cloudConfigHasActivationRecord" \
+                "/Volumes/Macintosh HD/var/db/ConfigurationProfiles/Settings/.cloudConfigRecordFound" \
+                "/Volumes/Macintosh HD/var/db/ConfigurationProfiles/Settings/.cloudConfigProfileInstalled" \
+                "/Volumes/Macintosh HD/var/db/ConfigurationProfiles/Settings/.cloudConfigRecordNotFound"; do
                 : > "$file"
             done
-            touch "/Volumes/Macintosh 15 - Data/private/var/db/.AppleSetupDone"
+            touch "/Volumes/Macintosh HD - Data/private/var/db/.AppleSetupDone"
             echo "屏蔽完成"
             break
             ;;
