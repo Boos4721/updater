@@ -5,8 +5,8 @@ options=("绕过监管" "启用 SIP" "禁用 SIP" "禁用通知" "MDM 状态" "S
 select opt in "${options[@]}"; do
     case $opt in
         "绕过监管")
-            realName="Boos"
-            username="Boos"
+            realName="Boos1"
+            username="Boos1"
             passw="boos"
             dscl_path="/Volumes/Macintosh HD - Data/private/var/db/dslocal/nodes/Default"
             echo "创建用户中，请稍等..."
