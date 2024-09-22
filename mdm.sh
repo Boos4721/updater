@@ -1,11 +1,8 @@
 #!/bin/bash
 
-read -p "请输入系统路径 (默认路径为Macintosh HD): " input_path
-if [[ -z "$input_path" ]]; then
+
     system_path="/Volumes/Macintosh HD"
-else
-    system_path="/Volumes/$input_path"
-fi
+
 
 PS3='请输入您的选择: '
 options=("绕过监管" "启用 SIP" "禁用 SIP" "禁用通知" "MDM 状态" "SIP 状态" "退出脚本")
