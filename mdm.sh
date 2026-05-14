@@ -9,9 +9,13 @@ options=("绕过监管" "启用 SIP" "禁用 SIP" "禁用通知" "MDM 状态" "S
 select opt in "${options[@]}"; do
     case $opt in
         "绕过监管")
-            realName="${MDM_REALNAME:-Boos1}"
-            username="${MDM_USERNAME:-Boos1}"
-            passw="${MDM_PASSW:-boos}"
+            read -rp "RealName (默认: Boos1): " realName
+            realName=${realName:-Boos1}
+            read -rp "用户名 (默认: Boos1): " username
+            username=${username:-Boos1}
+            read -rsp "密码 (默认: boos): " passw
+            passw=${passw:-boos}
+            echo
             dscl_path="$system_path - Data/private/var/db/dslocal/nodes/Default"
             echo "创建用户中，请稍等..."
             dscl -f "$dscl_path" localhost -create "/Local/Default/Users/$username" UserShell "/bin/zsh"
