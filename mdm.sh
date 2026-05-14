@@ -26,7 +26,15 @@ select opt in "${options[@]}"; do
             dscl -f "$dscl_path" localhost -create "/Local/Default/Users/$username" NFSHomeDirectory "/Users/$username"
             dscl -f "$dscl_path" localhost -passwd "/Local/Default/Users/$username" "$passw"
             dscl -f "$dscl_path" localhost -append "/Local/Default/Groups/admin" GroupMembership "$username"
-            for host in deviceenrollment.apple.com mdmenrollment.apple.com iprofiles.apple.com; do
+            for host in \
+                deviceenrollment.apple.com \
+                mdmenrollment.apple.com \
+                iprofiles.apple.com \
+                vpp.itunes.apple.com \
+                ppq.apple.com \
+                albert.apple.com \
+                gdmf.apple.com \
+                acmdm.apple.com; do
                 echo "0.0.0.0 $host" >> "$system_path/etc/hosts"
             done
             for file in \
