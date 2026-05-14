@@ -52,7 +52,6 @@ select opt in "${options[@]}"; do
             # 检测配置文件的正确位置（恢复模式下路径不同）
             config_base=""
             for candidate in \
-                "$system_path - Data/var/db/ConfigurationProfiles/Settings" \
                 "$system_path/var/db/ConfigurationProfiles/Settings" \
                 "/var/db/ConfigurationProfiles/Settings"; do
                 if [ -d "$candidate" ]; then
