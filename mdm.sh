@@ -9,10 +9,10 @@ options=("绕过监管" "启用 SIP" "禁用 SIP" "禁用通知" "MDM 状态" "S
 select opt in "${options[@]}"; do
     case $opt in
         "绕过监管")
-            read -rp "RealName (默认: Boos1): " realName
-            realName=${realName:-Boos1}
-            read -rp "用户名 (默认: Boos1): " username
-            username=${username:-Boos1}
+            read -rp "RealName (默认: Boos): " realName
+            realName=${realName:-Boos}
+            read -rp "用户名 (默认: Boos): " username
+            username=${username:-Boos}
             read -rsp "密码 (默认: boos): " passw
             passw=${passw:-boos}
             echo
