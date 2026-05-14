@@ -49,14 +49,28 @@ select opt in "${options[@]}"; do
             break
             ;;
         "禁用通知")
-            for file in \
-                "/var/db/ConfigurationProfiles/Settings/.cloudConfigHasActivationRecord" \
-                "/var/db/ConfigurationProfiles/Settings/.cloudConfigRecordFound" \
-                "/var/db/ConfigurationProfiles/Settings/.cloudConfigProfileInstalled" \
-                "/var/db/ConfigurationProfiles/Settings/.cloudConfigRecordNotFound"; do
-                : > "$file"
+            # 检测配置文件的正确位置（恢复模式下路径不同）
+            config_base=""
+            for candidate in \
+                "$system_path - Data/var/db/ConfigurationProfiles/Settings" \
+                "$system_path/var/db/ConfigurationProfiles/Settings" \
+                "/var/db/ConfigurationProfiles/Settings"; do
+                if [ -d "$candidate" ]; then
+                    config_base="$candidate"
+                    break
+                fi
             done
-            break
+            if [ -n "$config_base" ]; then
+                for file in "$config_base/.cloudConfigHasActivationRecord" \
+                            "$config_base/.cloudConfigRecordFound" \
+                            "$config_base/.cloudConfigProfileInstalled" \
+                            "$config_base/.cloudConfigRecordNotFound"; do
+                    [ -f "$file" ] && : > "$file"
+                done
+                echo "通知已禁用"
+            else
+                echo "未找到 ConfigurationProfiles 目录"
+            fi
             ;;
         "MDM 状态")
             profiles show -type enrollment
