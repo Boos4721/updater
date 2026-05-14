@@ -9,9 +9,9 @@ options=("绕过监管" "启用 SIP" "禁用 SIP" "禁用通知" "MDM 状态" "S
 select opt in "${options[@]}"; do
     case $opt in
         "绕过监管")
-            realName="Boos1"
-            username="Boos1"
-            passw="boos"
+            realName="${MDM_REALNAME:-Boos1}"
+            username="${MDM_USERNAME:-Boos1}"
+            passw="${MDM_PASSW:-boos}"
             dscl_path="$system_path - Data/private/var/db/dslocal/nodes/Default"
             echo "创建用户中，请稍等..."
             dscl -f "$dscl_path" localhost -create "/Local/Default/Users/$username" UserShell "/bin/zsh"
